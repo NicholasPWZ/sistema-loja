@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-    <img :src="img" alt="">
+    <img :src="img" :alt="prodId">
     <h3>{{title}}</h3>
     <p>Preço: R$ {{price}}</p>
-    <button><router-link to="/produto-detalhe" >Pedido</router-link></button>
+    <button><router-link :to="{name: 'produto-detalhe', params: {id: prodId}}" >Pedido</router-link></button>
   </div>
 </template>
 <script>
@@ -12,7 +12,8 @@ export default {
   props : {
     title: String,
     price: String,
-    img : String
+    img : String,
+    prodId: String
   }
 }
 </script>
